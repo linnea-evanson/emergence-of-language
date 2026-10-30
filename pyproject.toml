@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "emergence-of-language"
+version = "1.0.0"
+description = "Code for 'Emergence of Language in the Developing Brain' (Evanson et al.)"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "pyarrow>=15",
+  "scipy>=1.12",
+  "statsmodels>=0.14",
+  "matplotlib>=3.8",
+  "seaborn>=0.13",
+  "pyyaml>=6",
+  # cluster permutation tests and the fsaverage brain (downloaded once to ~/mne_data)
+  "mne>=1.6",
+  "nibabel>=5",  # used by MNE to read the fsaverage surfaces
+]
+
+[project.optional-dependencies]
+# Original analysis pipeline: needs the raw recordings.
+pipeline = [
+  "neuralset @ git+https://github.com/facebookresearch/neuroai@fecd70798c3ef8e0226366f4428635953c503c16#subdirectory=neuralset-repo",
+  "exca==0.6.0",
+  "mne==1.13.2",
+  "scikit-learn==1.9.1",
+  "torch==2.6.0",
+  "torchaudio==2.6.0",
+  "transformers==5.20.2",
+  "accelerate>=1.0",
+  "huggingface_hub>=0.30",
+  "pydantic>=2.7",
+  "tqdm>=4.66",
+  "nltk>=3.8",
+  "spacy>=3.7",
+  "benepar>=0.2",
+  "wordfreq>=3.0",
+  "num2words>=0.5",
+  "librosa>=0.10",
+]
+dev = ["pytest>=8", "mypy>=1.10"]
+
+[project.scripts]
+childbrain-figures = "childbrain.figures.make_all:main"
+childbrain-run = "childbrain.pipeline.run:main"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/childbrain"]
+
+[tool.pytest.ini_options]
+testpaths = ["src"]
+
+[tool.mypy]
+ignore_missing_imports = true
+plugins = ["pydantic.mypy"]

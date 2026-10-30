@@ -1,0 +1,56 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the article below."
+title: "emergence-of-language: code and data for 'Emergence of Language in the Developing Brain'"
+version: 1.0.0
+doi: 10.5281/zenodo.23812322
+repository-code: "https://github.com/linnea-evanson/emergence-of-language"
+license: CC-BY-NC-4.0
+type: software
+authors:
+  - family-names: Evanson
+    given-names: Linnea
+  - family-names: Bulteau
+    given-names: Christine
+  - family-names: Chipaux
+    given-names: Mathilde
+  - family-names: Dangles
+    given-names: Marie-Thérèse
+  - family-names: Dorfmüller
+    given-names: Georg
+  - family-names: Ferrand-Sorbets
+    given-names: Sarah
+  - family-names: Raffo
+    given-names: Emmanuel
+  - family-names: Rosenberg
+    given-names: Sarah
+  - family-names: Bourdillon
+    given-names: Pierre
+  - family-names: King
+    given-names: Jean-Rémi
+preferred-citation:
+  type: article
+  title: "Emergence of Language in the Developing Brain"
+  journal: "Science Advances"
+  year: 2026
+  # TODO: volume, issue, article number and DOI once published.
+  authors:
+    - family-names: Evanson
+      given-names: Linnea
+    - family-names: Bulteau
+      given-names: Christine
+    - family-names: Chipaux
+      given-names: Mathilde
+    - family-names: Dangles
+      given-names: Marie-Thérèse
+    - family-names: Dorfmüller
+      given-names: Georg
+    - family-names: Ferrand-Sorbets
+      given-names: Sarah
+    - family-names: Raffo
+      given-names: Emmanuel
+    - family-names: Rosenberg
+      given-names: Sarah
+    - family-names: Bourdillon
+      given-names: Pierre
+    - family-names: King
+      given-names: Jean-Rémi
